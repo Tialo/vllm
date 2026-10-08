@@ -7,6 +7,9 @@
     "PYTHON_VERSION": {
       "default": "3.12"
     },
+    "UV_VERSION": {
+      "default": "0.12.1"
+    },
     "UBUNTU_VERSION": {
       "default": "24.04"
     },
@@ -48,6 +51,12 @@
     },
     "SCCACHE_S3_NO_CREDENTIALS": {
       "default": "0"
+    },
+    "UV_CONSTRAINT": {
+      "default": "/opt/torch-build/constraints.txt"
+    },
+    "UV_BUILD_CONSTRAINT": {
+      "default": "/opt/torch-build/constraints.txt"
     },
     "TORCH_CUDA_ARCH_LIST": {
       "default": "7.5 8.0 8.6 8.9 9.0 10.0 11.0 12.0"

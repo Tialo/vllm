@@ -5,18 +5,9 @@ import argparse
 import glob
 import sys
 
-# Only strip targeted libraries when checking prefix
-TORCH_LIB_PREFIXES = (
-    # requirements/*.txt/in
-    "torch=",
-    "torchvision=",
-    "torchaudio=",
-    "torchcodec=",
-    # pyproject.toml
-    '"torch =',
-    '"torchvision =',
-    '"torchaudio =',
-    '"torchcodec =',
+TORCH_LIBRARIES = ("torch", "torchvision", "torchaudio", "torchcodec")
+TORCH_LIB_PREFIXES = tuple(
+    prefix for name in TORCH_LIBRARIES for prefix in (f"{name}=", f'"{name} =')
 )
 
 

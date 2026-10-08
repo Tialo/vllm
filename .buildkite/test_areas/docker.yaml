@@ -13,8 +13,12 @@ steps:
     - docker/Dockerfile.cpu
     - docker/docker-bake.hcl
     - tests/tools/test_docker_build_metadata_args.py
+    - tests/tools/test_resolve_torch.py
+    - tools/resolve_torch.py
+    - tools/use_existing_torch.py
   commands:
     - pytest -v -s tools/test_docker_build_metadata_args.py
+    - pytest -v -s tools/test_resolve_torch.py
   mirror:
     amd:
       label: ":amd: (MI250) Docker Build Metadata"
