@@ -1272,6 +1272,10 @@ def get_vllm_version() -> str:
         write_to="vllm/_version.py",
         git_describe_command=VLLM_GIT_DESCRIBE_COMMAND,
     )
+    # An sdist already records the complete version, including its device suffix.
+    if (ROOT_DIR / "PKG-INFO").is_file():
+        return version
+
     sep = "+" if "+" not in version else "."  # dev versions might contain +
 
     if not envs.VLLM_SKIP_VERSION_SUFFIX:
