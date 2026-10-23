@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD041 -->
 --8<-- [start:installation]
 
-vLLM has experimental support for macOS with Apple Silicon. For now, users must build from source to natively run on macOS.
+vLLM has experimental support for macOS with Apple Silicon.
 
 Currently the CPU implementation for macOS supports FP32 and FP16 datatypes.
 
@@ -25,7 +25,35 @@ Currently the CPU implementation for macOS supports FP32 and FP16 datatypes.
 --8<-- [end:set-up-using-python]
 --8<-- [start:pre-built-wheels]
 
-Currently, there are no pre-built Apple silicon CPU wheels.
+Pre-built vLLM wheels for Apple Silicon are available since version 0.33.0. To install release wheels:
+
+```bash
+# use uv
+uv pip install vllm
+```
+
+??? console "pip"
+    ```bash
+    # use pip
+    pip install vllm
+    ```
+
+#### Install the latest code
+
+LLM inference is a fast-evolving field, and the latest code may contain bug fixes, performance improvements, and new features that are not released yet. To allow users to try the latest code without waiting for the next release, vLLM provides working pre-built Apple Silicon wheels for every commit since `v0.33.0` on <https://wheels.vllm.ai/nightly>. For native CPU wheels, this index should be used:
+
+```bash
+uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly --index-strategy first-index
+```
+
+#### Install specific revisions
+
+If you want to access the wheels for previous commits (e.g. to bisect the behavior change, performance regression), you can specify the commit hash in the URL:
+
+```bash
+export VLLM_COMMIT=730bd35378bf2a5b56b6d3a45be28b3092d26519 # use full commit hash from the main branch
+uv pip install vllm --extra-index-url https://wheels.vllm.ai/${VLLM_COMMIT} --index-strategy first-index
+```
 
 --8<-- [end:pre-built-wheels]
 --8<-- [start:build-wheel-from-source]
