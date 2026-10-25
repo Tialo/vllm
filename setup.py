@@ -1523,7 +1523,7 @@ def get_requirements() -> list[str]:
     elif _is_cpu():
         requirements = _read_requirements("cpu.txt")
         if sys.platform.startswith("darwin"):
-            # remove triton @ https... when buidling macOS wheel, because
+            # remove triton @ https... when building macOS wheel, because
             # PyPI does not allow wheels to have requirements that are
             # installed from arbitrary sources, such as GitHub releases.
             # Also triton does not build wheels for macOS.
