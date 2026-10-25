@@ -40,7 +40,7 @@ uv pip install vllm
 
 #### Install the latest code
 
-LLM inference is a fast-evolving field, and the latest code may contain bug fixes, performance improvements, and new features that are not released yet. To allow users to try the latest code without waiting for the next release, vLLM provides working pre-built Apple Silicon wheels for every commit since `v0.33.0` on <https://wheels.vllm.ai/nightly>. For native CPU wheels, this index should be used:
+To install the wheel built from the latest main branch:
 
 ```bash
 uv pip install vllm --extra-index-url https://wheels.vllm.ai/nightly --index-strategy first-index
